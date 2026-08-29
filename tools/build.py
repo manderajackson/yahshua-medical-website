@@ -125,7 +125,7 @@ def footer():
       <div>
         <h4>Our Services</h4>
         <ul>
-          <li><a href="services.html">General Medicine</a></li>
+          <li><a href="services.html">General Medicine (GP)</a></li>
           <li><a href="services.html">All OPD Services</a></li>
           <li><a href="services.html">Pediatrics OPD</a></li>
           <li><a href="services.html">Minor Surgery &amp; Circumcision</a></li>
@@ -181,7 +181,7 @@ def page_hero(title, sub, bg, crumb):
 
 # ---------------------------------------------------------------- data
 # Scientific Hierarchy of Services:
-# 1. General Medicine
+# 1. General Medicine (GP)
 # 2. All OPD Services (with general check-ups)
 # 3. Pediatrics OPD
 # 4. Minor Surgery (all sterile..., circumcision)
@@ -246,27 +246,29 @@ INSURERS = [
 ]
 INSURERS_TEXT = ["EQUITY", "ASA International", "PSF Insurance"]
 
+# Doctors & Staff data
+# Clinical Director and Dental Surgeon have full designated titles; other doctors: General Medicine (GP)
 DOCTORS_LIST = [
     {
         "name": "Dr. KOLONELI Dieu Donné",
-        "role": "Clinical Director &middot; General Practitioner",
-        "dept": "Clinical Leadership &amp; General Medicine",
+        "role": "Clinical Director",
+        "dept": "Clinical Leadership &amp; Medical Oversight",
         "photo": None,
         "initials": "KD",
         "status": "On Duty 24/7"
     },
     {
         "name": "Dr. James NDAHIGWA",
-        "role": "General Practitioner",
-        "dept": "General Medicine &amp; OPD",
+        "role": "General Medicine (GP)",
+        "dept": "General Outpatient Consultations &amp; Care",
         "photo": "assets/img/doctor-ndahigwa.jpg",
         "initials": "JN",
         "status": "Available 24/7"
     },
     {
         "name": "Dr. GAPIRA SHIMA Patrick",
-        "role": "General Practitioner",
-        "dept": "General Medicine &amp; Minor Surgery",
+        "role": "General Medicine (GP)",
+        "dept": "General Outpatient Consultations &amp; Minor Procedures",
         "photo": "assets/img/doctor-shima.jpg",
         "initials": "SG",
         "status": "Available 24/7"
@@ -274,7 +276,7 @@ DOCTORS_LIST = [
     {
         "name": "Dr. NSENGIMANA Theodole",
         "role": "Dental Surgeon",
-        "dept": "Dental Clinic &amp; OPG X-Ray Unit",
+        "dept": "Dental Clinic &amp; OPG Panoramic X-Ray Unit",
         "photo": None,
         "initials": "NT",
         "status": "Dental Specialist"
@@ -282,7 +284,7 @@ DOCTORS_LIST = [
     {
         "name": "KAMASERUKA Godfrey",
         "role": "Head of Nurses",
-        "dept": "Nursing Service, Inpatient &amp; Triage",
+        "dept": "Nursing Service, Inpatient Ward &amp; Triage",
         "photo": "assets/img/nurse-godfrey.jpg",
         "initials": "KG",
         "status": "Nursing Lead"
@@ -297,7 +299,7 @@ DOCTORS_LIST = [
     },
     {
         "name": "Clinical &amp; Paramedical Team",
-        "role": "Dental Therapist &middot; Paramedicals &middot; Support Staff",
+        "role": "Dental Therapist &middot; Support Staff",
         "dept": "Physiotherapy, Dental &amp; Allied Health",
         "photo": None,
         "initials": "YM",
@@ -342,7 +344,7 @@ def doc_cards():
         if photo:
             photo_html = f'<img src="{photo}" alt="{name}" loading="lazy">'
         else:
-            photo_html = f'<div class="doc-ph"><span class="monogram">{inits}</span><span class="ph-label">Photo to be<br>added soon</span></div>'
+            photo_html = f'<div class="doc-ph"><span class="monogram">{inits}</span><span class="ph-label">Photo coming soon</span></div>'
             
         out += f"""
       <article class="doc-card reveal">
@@ -376,7 +378,7 @@ def build_index():
         </article>"""
 
     return head("Yahshua Medical Clinics Ltd | YAHWEH SAVES | 24/7 Clinic in Nyagatare, Rwanda",
-                "Yahshua Medical Clinics Ltd, Nyagatare. Affordable, patient centred healthcare open 24/7. General medicine, OPD, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology, NCDs, medical imaging & X-ray, hospitalization, dental with OPG, and physiotherapy.") + header("index.html") + f"""
+                "Yahshua Medical Clinics Ltd, Nyagatare. Affordable, patient centred healthcare open 24/7. General medicine (GP), OPD, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology, NCDs, medical imaging & X-ray, hospitalization, dental with OPG, and physiotherapy.") + header("index.html") + f"""
 <main>
 
 <section class="hero">
@@ -390,7 +392,7 @@ def build_index():
       <p class="lead">Affordable, patient centred healthcare in Nyagatare, offering preventive, diagnostic and curative medicine delivered with excellence, <strong>24 hours a day, 7 days a week, 365 days a year.</strong></p>
       <ul class="hero-badges">
         <li>&#9200; Open 24/7</li>
-        <li>&#129658; General Medicine</li>
+        <li>&#129658; General Medicine (GP)</li>
         <li>&#127973; OPD &amp; Check-ups</li>
         <li>&#128248; Medical Imaging &amp; X-Ray</li>
         <li>&#129463; Dental &amp; OPG Panoramic X-Ray</li>
@@ -549,7 +551,7 @@ def build_about():
         <span class="eyebrow">Who we are</span>
         <h2>YAHSHUA MEDICAL CLINICS LTD</h2>
         <p><strong>YAHSHUA MEDICAL CLINICS LTD</strong> has aims of providing the highest quality of care in preventive, diagnostic and curative medicine, thereby creating healthy and happy neighbourhoods.</p>
-        <p>Our name carries our promise: <strong>&laquo; YAHWEH SAVES &raquo;</strong>. We serve every patient who walks through our gate on EN 58 ST with dignity, competence and compassion, whatever the hour.</p>
+        <p>Our name carries our promise: <strong>&laquo; YAHWEH SAVES &raquo;</strong>. We serve every patient who walks in our clinic with dignity, competence and compassion, whatever the hour.</p>
         <p>The clinic brings together general medicine, all OPD services, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology and obstetrics, NCDs chronic care, medical imaging and X-Ray, hospitalization, dental with OPG panoramic X-Ray, and physiotherapy, all in one clinic.</p>
         <a class="btn btn-green" href="services.html">Explore Our Services</a>
       </div>
@@ -624,7 +626,7 @@ def build_services():
       </article>"""
 
     return head("Our Services | Yahshua Medical Clinics Ltd",
-                "Services at Yahshua Medical Clinics Ltd: General Medicine, All OPD Services, Pediatrics, Minor Surgery with Circumcision, Laboratory, Family Planning, Vaccination, Gynecology & Obstetrics, NCDs, Medical Imaging & X-Ray, Hospitalization, Dental with OPG panoramic X-Ray, and Physiotherapy. Open 24/7.") \
+                "Services at Yahshua Medical Clinics Ltd: General Medicine (GP), All OPD Services, Pediatrics, Minor Surgery with Circumcision, Laboratory, Family Planning, Vaccination, Gynecology & Obstetrics, NCDs, Medical Imaging & X-Ray, Hospitalization, Dental with OPG panoramic X-Ray, and Physiotherapy. Open 24/7.") \
         + header("services.html") \
         + page_hero("Our Services", "A wide range of health care services under one roof, available 24 hours a day, every day of the year.", "waiting-area-1.jpg", "Services") + f"""
 <main>
@@ -705,9 +707,9 @@ def build_services():
 
 def build_doctors():
     return head("Our Medical Team | Yahshua Medical Clinics Ltd",
-                "Meet the medical team of Yahshua Medical Clinics Ltd: General Practitioners, Dental Surgeon, Head of Nurses, Head of Laboratory Technicians and clinical staff serving Nyagatare 24/7.") \
+                "Meet the medical team of Yahshua Medical Clinics Ltd: Clinical Director, Dental Surgeon, General Medicine (GP) doctors, Head of Nurses, Head of Laboratory Technicians and clinical staff serving Nyagatare 24/7.") \
         + header("doctors.html") \
-        + page_hero("Our Medical Team", "Qualified doctors, dental surgeon, nursing leadership, laboratory technicians and paramedicals dedicated to your health.", "hospitalization.jpg", "Our Medical Team") + f"""
+        + page_hero("Our Medical Team", "Clinical Director, Dental Surgeon, General Practitioners (GP), nursing leadership, laboratory technicians and paramedicals.", "hospitalization.jpg", "Our Medical Team") + f"""
 <main>
 <section class="sec">
   <div class="wrap">
@@ -724,9 +726,9 @@ def build_doctors():
 <section class="sec sec-soft">
   <div class="wrap">
     <div class="grid g3">
-      <article class="card reveal"><div class="ico-lg">&#129658;</div><h3>5 General Practitioners</h3><p>Experienced GPs covering general medicine, OPD triage, pediatrics, NCD chronic care, gynecology consultations and minor surgery, on duty day and night.</p></article>
-      <article class="card alt reveal"><div class="ico-lg">&#129463;</div><h3>1 Dental Surgeon</h3><p>A qualified dental surgeon supported by dental professionals, offering comprehensive oral care and digital OPG panoramic dental X-Ray on site.</p></article>
-      <article class="card reveal"><div class="ico-lg">&#129657;</div><h3>Nursing, Lab &amp; Paramedicals</h3><p>Dedicated nursing leadership, experienced laboratory technicians and paramedicals ensuring rapid diagnostic results and attentive 24/7 care.</p></article>
+      <article class="card reveal"><div class="ico-lg">&#129658;</div><h3>General Medicine (GP)</h3><p>Experienced General Practitioners covering adult consultations, OPD triage, pediatrics, NCD chronic care, gynecology consultations and minor surgery, on duty day and night.</p></article>
+      <article class="card alt reveal"><div class="ico-lg">&#129463;</div><h3>Dental Surgeon</h3><p>A qualified Dental Surgeon offering comprehensive oral healthcare, surgical extractions, restorations and digital OPG panoramic dental X-Ray on site.</p></article>
+      <article class="card reveal"><div class="ico-lg">&#129657;</div><h3>Nursing &amp; Laboratory Leads</h3><p>Head of Nurses and Head of Laboratory Technicians leading our attentive 24/7 inpatient care, sterile procedures and accurate diagnostic testing.</p></article>
     </div>
   </div>
 </section>
@@ -759,7 +761,7 @@ def build_insurance():
     <div class="grid g3">
       <article class="card reveal"><div class="ico-lg">&#128179;</div><h3>All Payment Modes</h3><p>Cash, mobile money, bank transfer and card payments are all accepted at our cashier, 24 hours a day.</p></article>
       <article class="card alt reveal"><div class="ico-lg">&#128196;</div><h3>What to Bring</h3><p>Your insurance card, national ID or passport, and any previous medical documents or prescriptions.</p></article>
-      <article class="card reveal"><div class="ico-lg">&#10067;</div><h3>Not Sure You're Covered?</h3><p>Call reception on <a href="tel:{TEL_RECEP}">{TEL_RECEP}</a> or WhatsApp <a href="https://wa.me/{WA_INTL}" target="_blank" rel="noopener">{WA}</a> and we will confirm before you travel.</p></article>
+      <article class="card reveal"><div class="ico-lg">&#10067;</div><h3>Not Sure Your Insurance is Available?</h3><p>Call reception on <a href="tel:{TEL_RECEP}">{TEL_RECEP}</a> or WhatsApp <a href="https://wa.me/{WA_INTL}" target="_blank" rel="noopener">{WA}</a> and we will confirm before you travel.</p></article>
     </div>
   </div>
 </section>
@@ -890,7 +892,7 @@ def build_contact():
           <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" required placeholder="07xx xxx xxx"></div>
           <div class="field"><label for="service">Service needed</label>
             <select id="service" name="service">
-              <option>General Medicine</option>
+              <option>General Medicine (GP)</option>
               <option>All OPD Services / General Check-ups</option>
               <option>Pediatrics OPD</option>
               <option>Minor Surgery &amp; Circumcision</option>
