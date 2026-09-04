@@ -35,7 +35,7 @@ def head(title, desc, depth_css="assets"):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="keywords" content="Yahshua Medical Clinics, clinic Nyagatare, hospital Rwanda, 24/7 clinic, dental OPG, X-ray Nyagatare, RSSB clinic, NCDs, Physiotherapy">
+<meta name="keywords" content="Yahshua Medical Clinics, clinic Nyagatare, hospital Rwanda, 24/7 clinic, dental OPG, X-ray Nyagatare, RSSB clinic, NCDs, Physiotherapy, Hospitalization Nyagatare">
 <meta name="author" content="Yahshua Medical Clinics Ltd">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -134,7 +134,7 @@ def footer():
           <li><a href="services.html">Gynecology &amp; Obstetrics OPD</a></li>
           <li><a href="services.html">Non-Communicable Diseases (NCDs)</a></li>
           <li><a href="services.html">Medical Imaging &amp; X-Ray</a></li>
-          <li><a href="services.html">Hospitalization</a></li>
+          <li><a href="services.html">Hospitalization (30+ Rooms)</a></li>
           <li><a href="services.html">Dental &amp; OPG Panoramic X-Ray</a></li>
           <li><a href="services.html">Physiotherapy</a></li>
         </ul>
@@ -191,13 +191,13 @@ def page_hero(title, sub, bg, crumb):
 # 8. Gynecology & Obstetrics OPD
 # 9. Non-Communicable Diseases (NCDs)
 # 10. Medical Imaging & X-Ray
-# 11. Hospitalization
+# 11. Hospitalization (30+ rooms: V-VIP, VIP, Single, Ward)
 # 12. Dental Services & OPG X-Ray
 # 13. Physiotherapy
 
 SERVICES = [
     ("&#129658;", "General Medicine",
-     "Complete adult consultation, diagnosis and treatment by our qualified General Practitioners, covering both acute illnesses and chronic health needs.",
+     "Complete adult consultation, diagnosis and treatment by our qualified General Practitioners, covering acute illnesses, routine check-ups and medical certificates.",
      ["Adult outpatient consultations", "Clinical diagnosis &amp; medical treatment", "General health check ups", "Medical certificates &amp; fitness exams"], False),
     ("&#127973;", "All OPD Services",
      "A structured outpatient department offering fast vital signs triage, routine check ups, consultations, injections, dressings and nursing care.",
@@ -227,8 +227,8 @@ SERVICES = [
      "Digital diagnostic general X-Ray imaging on site for fast, accurate skeletal, chest and trauma radiography with rapid reporting.",
      ["General diagnostic X-Ray imaging", "Chest radiography for lungs &amp; heart", "Bone, spine &amp; joint fracture imaging", "Fast digital radiography reporting"], False),
     ("&#128715;", "Hospitalization",
-     "Comfortable observation and inpatient admission beds with 24 hour nursing care and daily doctor review for patients who need to stay.",
-     ["24 hour continuous nursing care", "Comfortable observation &amp; admission beds", "Intravenous (IV) therapy &amp; monitoring", "Daily doctor ward rounds &amp; review"], True),
+     "Modern inpatient hospitalization capacity of over 30 rooms, including V-VIP suites, VIP rooms, private single rooms and comfortable general ward rooms with 24 hour continuous nursing care.",
+     ["Over 30 rooms capacity (V-VIP, VIP, Single &amp; Ward)", "24 hour continuous nursing care &amp; monitoring", "Private V-VIP and VIP inpatient suites", "Observation &amp; admission beds", "Intravenous (IV) therapy &amp; daily doctor review"], True),
     ("&#129463;", "Dental Services &amp; OPG X-Ray",
      "A complete dental clinic led by our Dental Surgeon, with digital OPG panoramic dental X-Ray on site, saving Eastern Province patients from travelling to Kigali.",
      ["OPG panoramic &amp; dental X-Ray", "Scaling &amp; professional cleaning", "Tooth coloured fillings &amp; restorations", "Root canal treatment", "Tooth extraction &amp; minor oral surgery", "Dentures, crowns &amp; bridges", "Braces / orthodontic advice", "Teeth whitening &amp; cosmetic dentistry"], False),
@@ -238,72 +238,54 @@ SERVICES = [
 ]
 
 INSURERS = [
-    ("RSSB", "rssb.png"), ("MMI", "mmi.png"), ("RADIANT", "radiant.png"),
-    ("SANLAM", "sanlam.png"), ("BRITAM", "britam.png"), ("UAP", "uap.png"),
-    ("OLD MUTUAL", "old.png"), ("EDEN CARE", "eden-care.png"),
-    ("MIS UR", "misur.png"), ("URWEGO FINANCE", "urwego.png"),
+    ("RSSB", "rssb.png"),
+    ("MMI", "mmi.png"),
+    ("RADIANT", "radiant.png"),
+    ("SANLAM", "sanlam.png"),
+    ("BRITAM", "britam.png"),
+    ("UAP", "uap.png"),
+    ("OLD MUTUAL", "old.png"),
+    ("EDEN CARE", "eden-care.png"),
+    ("MIS UR", "misur.png"),
+    ("URWEGO FINANCE", "urwego.png"),
     ("UBUZIMA BWIZA FOUNDATION", "ubf.png"),
+    ("EQUITY", "equity.png"),
+    ("ASA International", "asa.png"),
+    ("PSF Insurance", "psf.png"),
 ]
-INSURERS_TEXT = ["EQUITY", "ASA International", "PSF Insurance"]
+INSURERS_TEXT = []
 
-# Doctors & Staff data
-# Clinical Director and Dental Surgeon have full designated titles; other doctors: General Medicine (GP)
+# Medical Team: Real portraits, clean names, and clean single titles (no second subtitles, no availability tags)
 DOCTORS_LIST = [
     {
         "name": "Dr. KOLONELI Dieu Donné",
         "role": "Clinical Director",
-        "dept": "Clinical Leadership &amp; Medical Oversight",
-        "photo": None,
-        "initials": "KD",
-        "status": "On Duty 24/7"
+        "photo": "assets/img/doctor-koloneli.jpg"
     },
     {
         "name": "Dr. James NDAHIGWA",
-        "role": "General Medicine (GP)",
-        "dept": "General Outpatient Consultations &amp; Care",
-        "photo": "assets/img/doctor-ndahigwa.jpg",
-        "initials": "JN",
-        "status": "Available 24/7"
+        "role": "General Practitioner",
+        "photo": "assets/img/doctor-ndahigwa.jpg"
     },
     {
         "name": "Dr. GAPIRA SHIMA Patrick",
-        "role": "General Medicine (GP)",
-        "dept": "General Outpatient Consultations &amp; Minor Procedures",
-        "photo": "assets/img/doctor-shima.jpg",
-        "initials": "SG",
-        "status": "Available 24/7"
+        "role": "General Practitioner",
+        "photo": "assets/img/doctor-shima.jpg"
     },
     {
         "name": "Dr. NSENGIMANA Theodole",
         "role": "Dental Surgeon",
-        "dept": "Dental Clinic &amp; OPG Panoramic X-Ray Unit",
-        "photo": None,
-        "initials": "NT",
-        "status": "Dental Specialist"
+        "photo": "assets/img/doctor-nsengimana.jpg"
     },
     {
         "name": "KAMASERUKA Godfrey",
         "role": "Head of Nurses",
-        "dept": "Nursing Service, Inpatient Ward &amp; Triage",
-        "photo": "assets/img/nurse-godfrey.jpg",
-        "initials": "KG",
-        "status": "Nursing Lead"
+        "photo": "assets/img/nurse-godfrey.jpg"
     },
     {
         "name": "Teddy MURANGO",
         "role": "Head of Laboratory Technicians",
-        "dept": "Diagnostic Laboratory Unit",
-        "photo": "assets/img/lab-teddy.jpg",
-        "initials": "TM",
-        "status": "Laboratory Lead"
-    },
-    {
-        "name": "Clinical &amp; Paramedical Team",
-        "role": "Dental Therapist &middot; Support Staff",
-        "dept": "Physiotherapy, Dental &amp; Allied Health",
-        "photo": None,
-        "initials": "YM",
-        "status": "Growing Team"
+        "photo": "assets/img/lab-teddy.jpg"
     },
 ]
 
@@ -314,7 +296,7 @@ GALLERY = [
     ("parking.jpg", "Secure on site parking"),
     ("entrance-arch.jpg", "Main entrance arch"),
     ("front-signage.jpg", "Our clinic on EN 58 ST"),
-    ("hospitalization.jpg", "Hospitalization wing"),
+    ("hospitalization.jpg", "Hospitalization wing (30+ rooms: V-VIP, VIP, Single & Ward)"),
     ("street.jpg", "Street view &amp; reception block"),
     ("flow-chart.jpg", "Our patient flow chart: Triage first, vital signs &amp; priority care"),
 ]
@@ -324,8 +306,6 @@ def ins_grid():
     out = '<div class="ins-grid">'
     for name, f in INSURERS:
         out += f'<div class="ins" title="{name}"><img src="assets/insurers/{f}" alt="{name} logo" loading="lazy"></div>'
-    for name in INSURERS_TEXT:
-        out += f'<div class="ins"><span>{name}</span></div>'
     out += '<div class="ins"><span style="color:var(--green-dark)">&amp; more<br>to come</span></div>'
     out += "</div>"
     return out
@@ -336,15 +316,9 @@ def doc_cards():
     for doc in DOCTORS_LIST:
         name = doc["name"]
         role = doc["role"]
-        dept = doc["dept"]
         photo = doc["photo"]
-        inits = doc["initials"]
-        badge = doc["status"]
         
-        if photo:
-            photo_html = f'<img src="{photo}" alt="{name}" loading="lazy">'
-        else:
-            photo_html = f'<div class="doc-ph"><span class="monogram">{inits}</span><span class="ph-label">Photo coming soon</span></div>'
+        photo_html = f'<img src="{photo}" alt="{name}" loading="lazy">'
             
         out += f"""
       <article class="doc-card reveal">
@@ -352,10 +326,8 @@ def doc_cards():
           {photo_html}
         </div>
         <div class="doc-body">
-          <span class="doc-status-badge"><span class="pulse-dot"></span> {badge}</span>
           <h3>{name}</h3>
           <span class="doc-role">{role}</span>
-          <p class="doc-dept">{dept}</p>
           <div class="doc-actions">
             <a class="btn-sm btn-doc-call" href="tel:{TEL_MAIN}">&#9742; Call Clinic</a>
             <a class="btn-sm btn-doc-wa" href="https://wa.me/{WA_INTL}" target="_blank" rel="noopener">WhatsApp</a>
@@ -378,7 +350,7 @@ def build_index():
         </article>"""
 
     return head("Yahshua Medical Clinics Ltd | YAHWEH SAVES | 24/7 Clinic in Nyagatare, Rwanda",
-                "Yahshua Medical Clinics Ltd, Nyagatare. Affordable, patient centred healthcare open 24/7. General medicine (GP), OPD, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology, NCDs, medical imaging & X-ray, hospitalization, dental with OPG, and physiotherapy.") + header("index.html") + f"""
+                "Yahshua Medical Clinics Ltd, Nyagatare. Affordable, patient centred healthcare open 24/7. General medicine (GP), OPD, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology, NCDs, medical imaging & X-ray, hospitalization with 30+ rooms (V-VIP, VIP, Single, Ward), dental with OPG, and physiotherapy.") + header("index.html") + f"""
 <main>
 
 <section class="hero">
@@ -399,7 +371,7 @@ def build_index():
         <li>&#128300; Laboratory</li>
         <li>&#129658; NCDs Chronic Care</li>
         <li>&#127939; Physiotherapy</li>
-        <li>&#128715; Hospitalization</li>
+        <li>&#128715; 30+ Inpatient Rooms (V-VIP, VIP, Ward)</li>
         <li>&#127974; 14+ Insurance Partners</li>
       </ul>
       <div class="hero-actions">
@@ -447,7 +419,7 @@ def build_index():
   <div class="wrap">
     <div class="grid">
       <div><div class="num" data-count="24" data-suffix="/7">0</div><div class="lbl">Hours open, every day</div></div>
-      <div><div class="num" data-count="6" data-suffix="+">0</div><div class="lbl">Doctors on our team</div></div>
+      <div><div class="num" data-count="30" data-suffix="+">0</div><div class="lbl">Hospitalization rooms (V-VIP, VIP, Single, Ward)</div></div>
       <div><div class="num" data-count="13" data-suffix="">0</div><div class="lbl">Clinical departments</div></div>
       <div><div class="num" data-count="14" data-suffix="+">0</div><div class="lbl">Partners we work with</div></div>
     </div>
@@ -552,7 +524,7 @@ def build_about():
         <h2>YAHSHUA MEDICAL CLINICS LTD</h2>
         <p><strong>YAHSHUA MEDICAL CLINICS LTD</strong> has aims of providing the highest quality of care in preventive, diagnostic and curative medicine, thereby creating healthy and happy neighbourhoods.</p>
         <p>Our name carries our promise: <strong>&laquo; YAHWEH SAVES &raquo;</strong>. We serve every patient who walks in our clinic with dignity, competence and compassion, whatever the hour.</p>
-        <p>The clinic brings together general medicine, all OPD services, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology and obstetrics, NCDs chronic care, medical imaging and X-Ray, hospitalization, dental with OPG panoramic X-Ray, and physiotherapy, all in one clinic.</p>
+        <p>The clinic brings together general medicine, all OPD services, pediatrics, minor surgery, laboratory, family planning, vaccination, gynecology and obstetrics, NCDs chronic care, medical imaging and X-Ray, 30+ room hospitalization (V-VIP, VIP, Single, Ward), dental with OPG panoramic X-Ray, and physiotherapy, all in one clinic.</p>
         <a class="btn btn-green" href="services.html">Explore Our Services</a>
       </div>
       <div class="reveal"><img src="assets/img/inside-us.jpg" alt="Inside Yahshua Medical Clinics Ltd" loading="lazy"></div>
@@ -626,7 +598,7 @@ def build_services():
       </article>"""
 
     return head("Our Services | Yahshua Medical Clinics Ltd",
-                "Services at Yahshua Medical Clinics Ltd: General Medicine (GP), All OPD Services, Pediatrics, Minor Surgery with Circumcision, Laboratory, Family Planning, Vaccination, Gynecology & Obstetrics, NCDs, Medical Imaging & X-Ray, Hospitalization, Dental with OPG panoramic X-Ray, and Physiotherapy. Open 24/7.") \
+                "Services at Yahshua Medical Clinics Ltd: General Medicine (GP), All OPD Services, Pediatrics, Minor Surgery with Circumcision, Laboratory, Family Planning, Vaccination, Gynecology & Obstetrics, NCDs, Medical Imaging & X-Ray, Hospitalization (over 30 rooms: V-VIP, VIP, Single, Ward), Dental with OPG panoramic X-Ray, and Physiotherapy. Open 24/7.") \
         + header("services.html") \
         + page_hero("Our Services", "A wide range of health care services under one roof, available 24 hours a day, every day of the year.", "waiting-area-1.jpg", "Services") + f"""
 <main>
@@ -686,7 +658,10 @@ def build_services():
         <img src="assets/img/dental-5.jpg" alt="Root Canal Treatment at Yahshua Medical Clinics" loading="lazy">
         <figcaption><strong>Root Canal Treatment</strong><span>Careful cleaning and sealing of the root canal to save a badly damaged tooth.</span></figcaption>
       </figure>
-      <div class="upload-box reveal"><span class="big">&#129463;</span><strong>More cases</strong>Photos added regularly</div>
+      <figure data-lb class="reveal">
+        <img src="assets/img/hospitalization.jpg" alt="Hospitalization at Yahshua Medical Clinics" loading="lazy">
+        <figcaption><strong>Inpatient Hospitalization</strong><span>30+ comfortable rooms including V-VIP, VIP, Single &amp; Ward rooms.</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -694,8 +669,8 @@ def build_services():
 <section class="sec">
   <div class="wrap">
     <div class="grid g2">
-      <article class="card reveal"><div class="ico-lg">&#9200;</div><h3>Operating Hours</h3><p><strong>24/7</strong>: 24 hours a day, 7 days a week, 365 days a year. Emergencies, triage, laboratory, pharmacy and nursing service are always staffed.</p></article>
-      <article class="card alt reveal"><div class="ico-lg">&#128179;</div><h3>Payment &amp; Partners</h3><p>We work with RSSB, MMI, RADIANT, SANLAM, BRITAM, UAP/Old Mutual, Eden Care, Equity, ASA International, UBF, PSF Insurance, MIS UR and more. <strong>All payment modes accepted.</strong> <a href="insurance.html">See partners we work with &rarr;</a></p></article>
+      <article class="card reveal"><div class="ico-lg">&#9200;</div><h3>Operating Hours</h3><p><strong>24/7</strong>: 24 hours a day, 7 days a week, 365 days a year. Emergencies, triage, laboratory, pharmacy, hospitalization and nursing service are always staffed.</p></article>
+      <article class="card alt reveal"><div class="ico-lg">&#128179;</div><h3>Payment &amp; Partners</h3><p>We work with RSSB, MMI, RADIANT, SANLAM, BRITAM, UAP, Old Mutual, Eden Care, Equity, ASA International, PSF Insurance, MIS UR, Urwego and Ubuzima Bwiza Foundation. <strong>All payment modes accepted.</strong> <a href="insurance.html">See partners we work with &rarr;</a></p></article>
     </div>
   </div>
 </section>
@@ -707,16 +682,16 @@ def build_services():
 
 def build_doctors():
     return head("Our Medical Team | Yahshua Medical Clinics Ltd",
-                "Meet the medical team of Yahshua Medical Clinics Ltd: Clinical Director, Dental Surgeon, General Medicine (GP) doctors, Head of Nurses, Head of Laboratory Technicians and clinical staff serving Nyagatare 24/7.") \
+                "Meet the medical team of Yahshua Medical Clinics Ltd: Clinical Director, Dental Surgeon, General Practitioners, Head of Nurses, and Head of Laboratory Technicians serving Nyagatare 24/7.") \
         + header("doctors.html") \
-        + page_hero("Our Medical Team", "Clinical Director, Dental Surgeon, General Practitioners (GP), nursing leadership, laboratory technicians and paramedicals.", "hospitalization.jpg", "Our Medical Team") + f"""
+        + page_hero("Our Medical Team", "Clinical Director, Dental Surgeon, General Practitioners, nursing leadership and laboratory technicians dedicated to your health.", "hospitalization.jpg", "Our Medical Team") + f"""
 <main>
 <section class="sec">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow">Meet the team</span>
       <h2>Doctors &amp; Clinical Leadership</h2>
-      <p>Our multidisciplinary medical team is on duty around the clock. To book an appointment or speak with our team, call our central line on <a href="tel:{TEL_MAIN}">{TEL_MAIN}</a> or reception on <a href="tel:{TEL_RECEP}">{TEL_RECEP}</a>.</p>
+      <p>Our medical team is on duty around the clock. To book an appointment or speak with our team, call our central line on <a href="tel:{TEL_MAIN}">{TEL_MAIN}</a> or reception on <a href="tel:{TEL_RECEP}">{TEL_RECEP}</a>.</p>
       <div class="rule"></div>
     </div>
     <div class="grid g3">{doc_cards()}</div>
@@ -726,9 +701,9 @@ def build_doctors():
 <section class="sec sec-soft">
   <div class="wrap">
     <div class="grid g3">
-      <article class="card reveal"><div class="ico-lg">&#129658;</div><h3>General Medicine (GP)</h3><p>Experienced General Practitioners covering adult consultations, OPD triage, pediatrics, NCD chronic care, gynecology consultations and minor surgery, on duty day and night.</p></article>
+      <article class="card reveal"><div class="ico-lg">&#129658;</div><h3>General Practitioners</h3><p>Experienced medical doctors covering adult consultations, OPD triage, pediatrics, NCD chronic care, gynecology consultations and minor surgery, on duty day and night.</p></article>
       <article class="card alt reveal"><div class="ico-lg">&#129463;</div><h3>Dental Surgeon</h3><p>A qualified Dental Surgeon offering comprehensive oral healthcare, surgical extractions, restorations and digital OPG panoramic dental X-Ray on site.</p></article>
-      <article class="card reveal"><div class="ico-lg">&#129657;</div><h3>Nursing &amp; Laboratory Leads</h3><p>Head of Nurses and Head of Laboratory Technicians leading our attentive 24/7 inpatient care, sterile procedures and accurate diagnostic testing.</p></article>
+      <article class="card reveal"><div class="ico-lg">&#129657;</div><h3>Nursing &amp; Laboratory Leads</h3><p>Head of Nurses and Head of Laboratory Technicians leading our attentive 24/7 inpatient hospitalization, sterile procedures and accurate diagnostic testing.</p></article>
     </div>
   </div>
 </section>
@@ -740,9 +715,9 @@ def build_doctors():
 
 def build_insurance():
     return head("Partners We Work With | Yahshua Medical Clinics Ltd",
-                "Yahshua Medical Clinics Ltd works with RSSB, MMI, RADIANT, SANLAM, BRITAM, UAP/Old Mutual, Eden Care, Equity, ASA International, UBF, PSF Insurance, MIS UR and more. All payment modes accepted.") \
+                "Yahshua Medical Clinics Ltd works with RSSB, MMI, RADIANT, SANLAM, BRITAM, UAP, Old Mutual, Eden Care, Equity, ASA International, PSF Insurance, MIS UR, Urwego and Ubuzima Bwiza Foundation. All payment modes accepted.") \
         + header("insurance.html") \
-        + page_hero("Partners We Work With", "We work with many insurance providers and accept all payment modes, so care stays affordable.", "front-signage.jpg", "Partners") + f"""
+        + page_hero("Partners We Work With", "We work with 14+ insurance providers and partners and accept all payment modes, so care stays affordable.", "front-signage.jpg", "Partners") + f"""
 <main>
 <section class="sec">
   <div class="wrap">
@@ -839,16 +814,6 @@ def build_gallery():
       <div class="rule"></div>
     </div>
     <div class="gal">{figs}</div>
-
-    <div class="sec-head center" style="margin-top:60px;margin-bottom:24px">
-      <h3>More photos coming soon</h3>
-      <p>These spaces are reserved for new photos of our departments, equipment and team.</p>
-    </div>
-    <div class="grid g3">
-      <div class="upload-box reveal"><span class="big">&#128247;</span><strong>New photo</strong>Coming soon</div>
-      <div class="upload-box reveal"><span class="big">&#128247;</span><strong>New photo</strong>Coming soon</div>
-      <div class="upload-box reveal"><span class="big">&#128247;</span><strong>New photo</strong>Coming soon</div>
-    </div>
   </div>
 </section>
 
@@ -902,14 +867,14 @@ def build_contact():
               <option>Gynecology &amp; Obstetrics</option>
               <option>Non-Communicable Diseases (NCDs)</option>
               <option>Medical Imaging &amp; X-Ray</option>
-              <option>Hospitalization</option>
+              <option>Hospitalization (30+ Rooms: V-VIP, VIP, Single, Ward)</option>
               <option>Dental / OPG Panoramic X-Ray</option>
               <option>Physiotherapy</option>
               <option>Other / Not sure</option>
             </select>
           </div>
           <div class="field"><label for="date">Preferred date</label><input type="date" id="date" name="date"></div>
-          <div class="field"><label for="insurance">Insurance (optional)</label><input id="insurance" name="insurance" placeholder="e.g. RSSB, MMI, Radiant, Sanlam..."></div>
+          <div class="field"><label for="insurance">Insurance (optional)</label><input id="insurance" name="insurance" placeholder="e.g. RSSB, MMI, Radiant, Sanlam, Equity, ASA..."></div>
           <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Briefly describe your concern"></textarea></div>
           <button class="btn btn-green" type="submit" style="width:100%;justify-content:center">Send via WhatsApp</button>
           <div id="formOk" style="display:none;margin-top:12px;color:var(--green-dark);font-weight:700">&#10004; WhatsApp opened. Press send to reach our team.</div>
